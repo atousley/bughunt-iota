@@ -1,3 +1,8 @@
+// What I fixed:
+// Line 24: passed in array[i] vs whole array
+// Line 73: removed - 1 to return the correct percent;
+// Line 47: rounded the number
+
 // ! ! !
 // Three Bugs
 
@@ -16,13 +21,14 @@ position = document.getElementById('content');
 //Loop the array, extracting each array and writing information to the DOM
 //Note that the information is not 'clean'
 for(var i = 0; i < array.length; i++){
-	array[i] = calculateSTI(array);
+	array[i] = calculateSTI(array[i]);
  	newEl = document.createElement('li');
 	newText = document.createTextNode(array[i]);
 	newEl.appendChild(newText);
 	position.appendChild(newEl);
-}
 
+
+}
 
 function calculateSTI(array1) {
   var newArray = [];
@@ -37,10 +43,10 @@ function calculateSTI(array1) {
     bonus = 0.13;
   }
 
-  newArray[1] = bonus;
-  newArray[2] = baseSalary * (1.0 + bonus);
-  newArray[3] = Math.round(baseSalary * bonus);
-  console.log(newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
+  newArray[1] = " " + bonus;
+  newArray[2] = " " + Math.round(baseSalary * (1.0 + bonus));
+  newArray[3] = " " + Math.round(baseSalary * bonus);
+  console.log('New Array' + newArray[0] + " " + newArray[1] + " " + newArray[2] + " " + newArray[3]);
   return newArray;
 
 }
@@ -64,7 +70,7 @@ function getBaseSTI(reviewScore) {
       basePercent = 0.10;
       break;
   }
-  return basePercent - 1; 
+  return basePercent; 
 }
 
 function getYearAdjustment(employeeNumber) {

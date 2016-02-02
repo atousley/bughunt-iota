@@ -1,0 +1,21 @@
+body {
+	font-family: courier, sans-serif;
+}
+
+#content {
+	width: 500px;
+	margin: 0 auto;
+	padding: 15px;
+}
+
+li {
+	list-style: none;
+	line-height: 25px
+}
+h1, h2 {
+	width: 500;
+	margin: 0 auto;
+	padding: 5px 15px;
+	text-align: center;
+}
+
